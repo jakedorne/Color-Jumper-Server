@@ -13,7 +13,7 @@ router.get('/easy', function(req, res, next) {
       if (err)
        { console.error(err); res.send("Error " + err); }
       else
-       { res.render('index', {title: JSON.stringify(result.rows)} ); }
+       { res.render('index', {title: JSON.stringify(result)} ); }
     });
   });
 });

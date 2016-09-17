@@ -8,7 +8,7 @@ pg.defaults.ssl = true;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM EasyScores', function(err, result) {
+    client.query('SELECT * FROM EasyScores LIMIT 1;', function(err, result) {
       done();
       if (err)
        { console.error(err); res.send("Error " + err); }

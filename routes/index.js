@@ -13,7 +13,7 @@ router.get('/easy', function(req, res, next) {
       if (err)
        { console.error(err); res.send("Error " + err); }
       else
-       { res.send(JSON.stringify(result.rows)); }
+       { res.send(result.rows); }
     });
   });
 });
@@ -25,7 +25,7 @@ router.get('/hard', function(req, res, next) {
       if (err)
        { console.error(err); res.send("Error " + err); }
       else
-       { res.send(JSON.stringify(result.rows)); }
+       { res.send(result.rows); }
     });
   });
 });

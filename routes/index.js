@@ -11,9 +11,9 @@ router.get('/', function(req, res, next) {
     client.query('SELECT * FROM EasyScores', function(err, result) {
       done();
       if (err)
-       { console.error(err); response.send("Error " + err); }
+       { console.error(err); res.send("Error " + err); }
       else
-       { response.render('index', {title: result.rows} ); }
+       { res.render('index', {title: result.rows} ); }
     });
   });
 });

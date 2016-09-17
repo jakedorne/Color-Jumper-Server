@@ -3,8 +3,8 @@ var router = express.Router();
 
 var pg = require('pg');
 
-pg.defaults.ssl = true;
-client = pg.connect(process.env.DATABASE_URL);
+//pg.defaults.ssl = true;
+var client = new Client(process.env.DATABASE_URL);
 
 
 /* GET home page. */

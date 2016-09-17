@@ -13,7 +13,7 @@ router.get('/easy', function(req, res, next) {
       if (err)
        { console.error(err); res.send("Error " + err); }
       else
-       { res.render('index', {title: 'Easy HighScores', result: JSON.stringify(result.rows)} ); }
+       { res.send(JSON.stringify(result.rows)); }
     });
   });
 });
@@ -25,7 +25,7 @@ router.get('/hard', function(req, res, next) {
       if (err)
        { console.error(err); res.send("Error " + err); }
       else
-       { res.render('index', {title: 'Hard Highscores', result: JSON.stringify(result.rows)} ); }
+       { res.send(JSON.stringify(result.rows)); }
     });
   });
 });

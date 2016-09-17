@@ -19,7 +19,7 @@ router.get('/easy', function(req, res, next) {
 });
 
 router.post('/easy', function(req, res, next) {
-  var query = 'INSERT INTO EasyScores VALUES ('+req.body.name+', '+req.body.score+');';
+  var query = "INSERT INTO EasyScores VALUES ('"+req.body.name+"', "+req.body.score+");";
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query(query, function(err, result) {
       done();
@@ -45,7 +45,7 @@ router.get('/hard', function(req, res, next) {
 });
 
 router.post('/hard', function(req, res, next) {
-  var query = 'INSERT INTO HardScores VALUES ('+req.body.name+', '+req.body.score+');';
+  var query = "INSERT INTO HardScores VALUES ('"+req.body.name+"', "+req.body.score+");";
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query(query, function(err, result) {
       done();

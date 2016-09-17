@@ -13,7 +13,7 @@ router.get('/easy', function(req, res, next) {
       if (err)
        { console.error(err); res.send("Error " + err); }
       else
-       { res.render('index', {title: rJSON.stringify(result.rows).name} ); }
+       { res.render('index', {title: JSON.stringify(result.rows).name} ); }
     });
   });
 });
@@ -30,7 +30,7 @@ router.get('/hard', function(req, res, next) {
   });
 });
 
-router.get('/', function(res, error){
+router.get('/', function(req, res, err){
   res.render('index', {title: 'Highscores'});
 });
 
